@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9ec0ff;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4a0353;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background-color: #7f058f;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4dcff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: calc(33% - 20px);
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .btn {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#introduction">Introducere</a>
+        <a href="#history">Istorie</a>
+        <a href="#styles">Stiluri</a>
+        <a href="#masters">Maeștri</a>
+        <a href="#benefits">Beneficii</a>
+
+    </nav>
+
+    <div class="container">
+
+        <section id="introduction" class="section">
+            <h2>Introducere în Fotografie</h2>
+            <p>Fotografia este arta, aplicarea și practica de a crea imagini durabile prin înregistrarea luminii, fie electronic prin intermediul unui senzor de imagine, fie chimic prin intermediul unui material sensibil la lumină, cum ar fi filmul fotografic.</p>
+            <div class="image-container">
+                <img src="fotografie1.jpg" alt="Fotografie" style="max-height: 500px;">
+            </div>
+        </section>
+
+        <section id="history" class="section">
+            <h2>Istoria Fotografiei</h2>
+            <p>Istoria fotografiei a început în antichitate îndepărtată cu descoperirea a două principii critice: proiecția imaginii camerei obscure și observația că unele substanțe sunt vizibil modificate prin expunerea la lumină.</p>
+            <div class="image-container">
+                <img src="fotografie2.jpg" alt="Istoria Fotografiei" style="max-height: 500px;">
+            </div>
+        </section>
+
+        <section id="styles" class="section">
+            <h2>Stiluri de Fotografie</h2>
+            <p>Există mai multe stiluri de fotografie, fiecare având caracteristici unice:</p>
+            <ul>
+                <li>Fotografie de peisaj</li>
+                <li>Fotografie de portret</li>
+                <li>Fotografie de stradă</li>
+                <li>Fotografie macro</li>
+                <li>Fotografie abstractă</li>
+            </ul>
+            <div class="image-container">
+                <img src="fotografie3.jpg" alt="Stiluri de Fotografie" style="max-height: 500px;">
+            </div>
+        </section>
+
+        <section id="masters" class="section">
+            <h2>Maeștri ai Fotografiei</h2>
+            <p>Maeștrii fotografiei au contribuit semnificativ la dezvoltarea și popularizarea acestui domeniu artistic:</p>
+            <ul>
+                <li>Ansel Adams</li>
+                <li>Dorothea Lange</li>
+                <li>Henri Cartier-Bresson</li>
+                <li>Steve McCurry</li>
+                <li>Annie Leibovitz</li>
+            </ul>
+            <div class="slider">
+                <div class="slides">
+                    <img src="ansel_adams.jpg" alt="Ansel Adams" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                    <img src="dorothea_lange.jpg" alt="Dorothea Lange" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                    <img src="henri.jpg" alt="Henri Cartier-Bresson" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                    <img src="steve_mccurry.jpg" alt="Steve McCurry" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                    <img src="annie_leibovitz.jpg" alt="Annie Leibovitz" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+                </div>
+                <div class="prev" onclick="moveSlide(-1)">&#10094;</div>
+                <div class="next" onclick="moveSlide(1)">&#10095;</div>
+            </div>
+        </section>
+        
+        <style>
+            .slider {
+                position: relative;
+                max-width: 100%;
+                margin: auto;
+                overflow: hidden;
+                border: 2px solid #444;
+                border-radius: 8px;
+            }
+        
+            .slides {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+        
+            .slides img {
+                width: 100%;
+                height: auto;
+                display: none;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+        
+            .slider .prev, .slider .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+        
+            .slider .prev {
+                left: 10px;
+            }
+        
+            .slider .next {
+                right: 10px;
+            }
+        </style>
+        
+        <script>
+            let slideIndex = 0;
+            showSlides(slideIndex);
+        
+            function moveSlide(n) {
+                showSlides(slideIndex += n);
+            }
+        
+            function showSlides(n) {
+                let slides = document.querySelectorAll('.slides img');
+                if (n >= slides.length) {
+                    slideIndex = 0;
+                } else if (n < 0) {
+                    slideIndex = slides.length - 1;
+                } else {
+                    slideIndex = n;
+                }
+                slides.forEach((slide, index) => {
+                    slide.style.display = (index === slideIndex) ? 'block' : 'none';
+                });
+            }
+        </script>
+
+        <section id="benefits" class="section">
+            <h2>Beneficiile Practicării Fotografiei</h2>
+            <ul>
+                <li>Îmbunătățirea creativității</li>
+                <li>Dezvoltarea unui ochi artistic</li>
+                <li>Documentarea momentelor importante</li>
+                <li>Învățarea abilităților tehnice</li>
+                <li>Reducerea stresului</li>
+            </ul>
+            <div class="image-container">
+                <img src="fotografie4.jpg" alt="Beneficiile Fotografiei" style="max-height: 500px;">
+            </div>
+        </section>
+
+       
+
+
+</body>
+
+</html>
